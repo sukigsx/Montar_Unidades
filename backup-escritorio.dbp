@@ -1,0 +1,144 @@
+[DEBREATE-0.7.13]
+<<CTRL>>
+Package: Backup-escritorio
+Version: 1
+Maintainer: sukigsx <mbsistemas.sukigsx@gmail.com>
+Architecture: all
+Priority: optional
+Description: Realiza backup de la configuracion de tu escritorio.
+ Este script esta pensado para realizar backup de la configuracion de tu escritorio.
+ Esta probado en entorno Gnome y Plasma.
+ Solo copia la configuracion, NO LOS DATOS.
+ .
+ - Backup de tus iconos.
+ - Backup de tus ascesos directos en tu escritorio.
+ - Backup de tus lanzadores, tanto del escritorio como del menu.
+ - El backup lo puedes realizar en red a un servidor o en local.
+ - Backup de la configuracion asi como las ventanas y las barras etc...
+
+<</CTRL>>
+<<FILES>>
+1
+/home/sukigsx/Documentos/GitHub/Backup-esritorio/iconos/backup-escritorio.ico* -> backup-escritorio.ico -> /usr/share/icons/backup-escritorio
+/home/sukigsx/Documentos/GitHub/Backup-esritorio/codigo/backup-escritorio.sukigsx.sh* -> backup-escritorio.sukigsx.sh -> /usr/bin
+<</FILES>>
+<<SCRIPTS>>
+<<PREINST>>
+0
+<</PREINST>>
+<<POSTINST>>
+1
+rojo="\e[0;31m\033[1m" #rojo
+verde="\e[;32m\033[1m" 
+azul="\e[0;34m\033[1m"
+amarillo="\e[0;33m\033[1m"
+rosa="\e[0;35m\033[1m"
+turquesa="\e[0;36m\033[1m"
+borra_colores="\033[0m\e[0m" #borra colores
+clear
+echo ""
+echo "${azul} ███████  ██    ██  ██   ██  ██  ██████    ███████  ██   ██${borra_colores}"
+echo "${azul} ██       ██    ██  ██  ██   ██  ██        ██        ██ ██ ${borra_colores}"
+echo "${azul} ███████  ██    ██  █████    ██  ██   ███  ███████    ███  ${borra_colores}"
+echo "${azul}      ██  ██    ██  ██  ██   ██  ██    ██       ██   ██ ██ ${borra_colores}"
+echo "${azul} ███████   ██████   ██   ██  ██   ██████   ███████  ██   ██${borra_colores}"
+echo ""
+echo "Cuando instalas un script mio. Se genera una funcion a nivel de bashrc"
+echo " para que desde un terminal con el comando ( scripts ) puedas ver"
+echo " todos los scripts que tienes instalados en tu maquina."
+echo ""
+if [ -f /etc/bash.bashrc.sukigsx ]
+then
+    echo " no"
+    exit
+else
+    echo "" >> /etc/bash.bashrc.sukigsx
+    echo "# Mete al /etc/bash.bashrc la funcion de ver scripts" >> /etc/bash.bashrc.sukigsx
+    echo 'echo "------------------------------------------------------------------"' >> /etc/bash.bashrc.sukigsx
+    echo 'echo "-    Ver  Scripts  instalados  de  sukigsx  =  scripts           -"' >> /etc/bash.bashrc.sukigsx
+    echo 'echo "------------------------------------------------------------------"' >> /etc/bash.bashrc.sukigsx
+    echo 'echo ""' >> /etc/bash.bashrc.sukigsx
+    echo "" >> /etc/bash.bashrc.sukigsx
+    echo "scripts() {"  >> /etc/bash.bashrc.sukigsx
+    echo 'clear' >> /etc/bash.bashrc.sukigsx
+    echo "echo '---------------------------- SUKIGSX -----------------------------'" >> /etc/bash.bashrc.sukigsx
+    echo "echo '-         LISTADO DE LOS SCRIPTS INSTALADOS EN TU SISTEMA        -'" >> /etc/bash.bashrc.sukigsx
+    echo "echo '------------------------------------------------------------------'" >> /etc/bash.bashrc.sukigsx
+    echo 'echo ""' >> /etc/bash.bashrc.sukigsx
+    echo "ls -l /usr/bin/*.sukigsx.sh | awk '{print "'$9'"}' | awk -F/ '{print "'"[*] "'" "'$4'"}'" >> /etc/bash.bashrc.sukigsx
+    echo 'echo ""' >> /etc/bash.bashrc.sukigsx
+    echo "echo '------------------------------------------------------------------'" >> /etc/bash.bashrc.sukigsx
+    echo "}" >> /etc/bash.bashrc.sukigsx
+    echo "" >> /etc/bash.bashrc.sukigsx
+               
+    #mete al .bashrc la orden de carga del fifhero /etc/bash.bashrc
+    echo "source /etc/bash.bashrc.sukigsx" >> /etc/bash.bashrc
+fi
+<</POSTINST>>
+<<PRERM>>
+0
+<</PRERM>>
+<<POSTRM>>
+1
+rojo="\e[0;31m\033[1m" #rojo
+verde="\e[;32m\033[1m" 
+azul="\e[0;34m\033[1m"
+amarillo="\e[0;33m\033[1m"
+rosa="\e[0;35m\033[1m"
+turquesa="\e[0;36m\033[1m"
+borra_colores="\033[0m\e[0m" #borra colores
+clear
+echo ""
+echo "${azul} ███████  ██    ██  ██   ██  ██  ██████    ███████  ██   ██${borra_colores}"
+echo "${azul} ██       ██    ██  ██  ██   ██  ██        ██        ██ ██ ${borra_colores}"
+echo "${azul} ███████  ██    ██  █████    ██  ██   ███  ███████    ███  ${borra_colores}"
+echo "${azul}      ██  ██    ██  ██  ██   ██  ██    ██       ██   ██ ██ ${borra_colores}"
+echo "${azul} ███████   ██████   ██   ██  ██   ██████   ███████  ██   ██${borra_colores}"
+echo ""
+echo "- ${verde}Se ha desistalado el script.${borra_colores}"
+echo ""
+echo "- ${amarillo}Si tienes mas scripts mios instalados, selecciona ( N ).${borra_colores}"
+read -p "- Deseas borrar los datos a nivel de bashrc? (S/N) -->> " sn
+if [ $sn = "S" ] || [ $sn = "s" ]
+then 
+    echo ""
+    echo "-${verde} Funcion a nivel de bashrc, a sido borrada.${borra_colores}"
+    sudo rm /etc/bash.bashrc.sukigsx 2>/dev/null
+    sudo sed -i '/source/d' /etc/bash.bashrc
+    echo "- ${verde}Muchas gracias...${borra_colores}"
+    echo ""
+else
+    echo ""
+    echo "- ${verde}Muchas gracias...${borra_colores}"
+    echo ""
+    exit 
+fi
+echo ""
+<</POSTRM>>
+<</SCRIPTS>>
+<<CHANGELOG>>
+<<DEST>>DEFAULT<</DEST>>
+
+<</CHANGELOG>>
+<<COPYRIGHT>>
+
+<</COPYRIGHT>>
+<<MENU>>
+1
+Name=Backup-escritorio
+Version=1.0
+Exec=bash /usr/bin/backup-escritorio.sukigsx.sh
+Comment=--  Realiza backup de la configuracion de tu escritorio. --
+Icon=/usr/share/icons/backup-escritorio/backup-escritorio.ico
+Type=Application
+Terminal=true
+StartupNotify=true
+Encoding=UTF-8
+Categories=Utility;System;
+<</MENU>>
+<<BUILD>>
+1
+1
+1
+strip
+<</BUILD>>

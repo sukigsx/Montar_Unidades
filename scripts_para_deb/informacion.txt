@@ -1,0 +1,14 @@
+-- Instalacion de paquetes --
+ 
+ 
+Lo mas interesante es la automatizacion de lo que quieres instalar.
+Seleccionas los paquetes a instalar y cuando termines, te los instalara todos a la vez.
+Sin necesidad de ir introduciendo comandos.
+¿Que puedes hacer con este script?
+- Actualizar tu sistema.
+- Añadir repositorios.
+- Instalar paquetes *.deb.
+- Instalar software de forma automatizada.
+
+software en /usr/bin
+iconos en /usr/share/icons/Instalacion-software
