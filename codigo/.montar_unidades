@@ -1,28 +1,30 @@
 #####################################################################
 # INDICA SI ESTA CONFIGURADO, OPCIONES (si,no) defecto (no)
-configurado="no"
+configurado=no
 #####################################################################
 
 
 
 #####################################################################
-# INDICA LOS DATOS DE TU SERVIDOR DENTRO DE LAS COMILLAS
-ip_servidor_samba=""
-usuario_servidor_samba=""
-password_servidor_samba=""
+# INDICA LOS DATOS DE TU SERVIDOR.
+ip_servidor_samba=
+usuario_servidor_samba=
+password_servidor_samba=
 #####################################################################
 
 
 #####################################################################
-# INDICA LOS NOMBRE DE LAS CARPETAS A MONTAR, DENTRO DE LAS COMILLA
-carpeta0="datos"
-carpeta1="web"
-carpeta2=""
-carpeta3=""
-carpeta4=""
-carpeta5=""
-carpeta6=""
-carpeta7=""
-carpeta8=""
-carpeta9=""
+# INDICA LOS NOMBRE DE LAS CARPETAS A MONTAR.
+carpeta0=
+carpeta1=
+carpeta2=
+carpeta3=
+carpeta4=
+carpeta5=
+carpeta6=
+carpeta7=
+carpeta8=
+carpeta9=
 #####################################################################
+# GRABA LOS CAMBION Y LISTO.
+# ACUERDATE DE PONER si EN LA PRIMERA OPCION.
