@@ -648,7 +648,7 @@ sleep 2
 #Fin de verifica software necesario
 
 #comprobando si el fichero de configuracion esta configurado
-source /home/$(whoami)/.config/config_montar_unidades
+source /home/$(whoami)/.config/config_montar_unidades 2>/dev/null 1>/dev/null 0>/dev/null
 if [ $configurado = "si" ] 2>/dev/null 1>/dev/null 0>/dev/null
 then
     #si es que si, espera el tiempo por si quieres entrar al menu, pasado el tiempo monta las unidades configuradas.
