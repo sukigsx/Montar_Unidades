@@ -270,10 +270,10 @@ case $opcion in
                 then
                     sudo umount /home/$(whoami)/servidor_samba/$unidad 2>/dev/null 1>/dev/null 0>/dev/null
                     echo -e " [${verde}V${borra_colores}] Unidad ${verde}$unidad${borra_colores} desmontada correctamente."
-                    sleep 2
+                    sleep 5
                 else
                     echo -e " [${rojo}X${borra_colores}] Unidad ${rojo}$unidad${borra_colores} NO montada. Imposible desmontar."
-                    sleep 2
+                    sleep 5
                 fi
             done
             echo -e ""
