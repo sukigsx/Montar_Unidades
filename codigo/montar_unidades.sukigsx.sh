@@ -436,7 +436,7 @@ case $opcion in
         echo -e "       Facil. si has parado el inicio automatico del script para sacar el menu y realizar alguna modificacion, con esta opcion montaras las unidames o carpetas configuradas."
         echo -e "   6.${azul} Desmontar todas las unidades.${borra_colores}"
         echo -e "       Basicamente igual que la opcion 5, pero al reves, lo que hace es desmontar todo lo que tengas montado."
-        echo -e "       De todas formas, al estar montadas con mount, si reinicias el equipo, NO se montaran, a no ser que lo tengas configurago con la opcion 7 del menu"
+        echo -e "       De todas formas, al estar montadas con mount, si reinicias el equipo, NO se montaran, a no ser que lo tengas configurago con la opcion 7 del menu."
         echo -e "   7.${azul} Montar las unidades al inicio del sistema. (crontab).${borra_colores}"
         echo -e "       Con esta opcion, consigues que no tengas que ejecutar el script para montar las unidades o carpetas que tengas configuradas."
         echo -e "       Se crea una orden el el fichero (crontab) que se encarga de montar las unidades o carpetas de tu servidor automaticamente en cada reinicio de tu sistema y tu usuario."
@@ -624,7 +624,7 @@ do
     contador="1" #ponemos la variable contador a 1
     while [ $sino -gt 0 ] #entra en el bicle si variable programa es 0, no lo ha encontrado which
     do
-        if [ $contador = "4" ] || [ $conexion = "no" ] #si el contador es 4 entre en then y sino en else
+        if [ $contador = "4" ] #si el contador es 4 entre en then y sino en else
         then #si entra en then es porque el contador es igual a 4 y no ha podido instalar o no hay conexion a internet
             echo ""
             echo -e " ${amarillo}NO se ha podido instalar ($paquete).${borra_colores}"
