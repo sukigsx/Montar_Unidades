@@ -132,7 +132,7 @@ case $opcion in
     3)  #ver carpetas compartidas de tu servidor
         if [ $configurado = "si" ]
         then
-            if smbclient -L //$ip_servidor_samba/ -U=$usuario_servidor_samba%$password_servidor_samba #2>/dev/null 1>/dev/null 0>/dev/null
+            if smbclient -L //$ip_servidor_samba/ -U=$usuario_servidor_samba%$password_servidor_samba 2>/dev/null 1>/dev/null 0>/dev/null
             then
                 clear
                 echo -e "\n ${azul}Listado de carpetas compartidas.${borra_colores}"
@@ -270,10 +270,10 @@ case $opcion in
                 then
                     sudo umount /home/$(whoami)/servidor_samba/$unidad 2>/dev/null 1>/dev/null 0>/dev/null
                     echo -e " [${verde}V${borra_colores}] Unidad ${verde}$unidad${borra_colores} desmontada correctamente."
-                    sleep 5
+                    sleep 2
                 else
                     echo -e " [${rojo}X${borra_colores}] Unidad ${rojo}$unidad${borra_colores} NO montada. Imposible desmontar."
-                    sleep 5
+                    sleep 2
                 fi
             done
             echo -e ""
@@ -408,8 +408,47 @@ case $opcion in
         ;;
 
     90) #ayuda 
-        echo "ayuda";
-        read p
+        clear
+        echo -e "${rojo}   - Menu Ayuda -${borra_colores}"
+        echo -e ""
+        echo -e "${verde}   Este script lo que hace, es automatizar el proceso de montar unidades en tu distro de linux, escanea tu red y busca servidores de archivos que utilizan el protocolo SAMBA.${borra_colores}"
+        echo -e "${verde}   Te muestra las carpetas compartidas y registra tus datos de acceso para poder montarlas de forma automatica.${borra_colores}"
+        echo -e "${verde}   La primera vez que ejecutas el script, te pedira los datos necesarios para su configuracion.${borra_colores}"
+        echo -e "${verde}   Las siguientes veces que ejecutes el script, las montara automaticamente sin pedirte nada, hay una parte en la que te pide que pulses (enter) y podras entrar al menu.${borra_colores}"
+        echo -e ""
+        echo -e "${amarillo}   Las opciones del menu son las siguientes:${borra_colores}"
+        echo -e ""
+        echo -e "   0.${azul} Actualizar el script.${borra_colores}"
+        echo -e "       Pues esta claro, se actualiza el script si fuera necesario, para aplicar las mejoras del mismo."
+        echo -e "   1.${azul} Ver/editar fichero de configuracion.${borra_colores}"
+        echo -e "       Esta opcion es simple, carga en el editor nano el fichero de configuracion, en el estan todos los datos de conexion a tu servidor o servidores de ficheros SAMBA."
+        echo -e "       Puedes modificar los datos de forma manual, como la direccion ip del servidor, los datos de usuario y password asi como las carpetas a las cuales quieres conectar."
+        echo -e "       Nota. las carpetas o unidades de tu servidor, puedes poner tantas como quieras o tengas en tu servidor en una unica linea y separada por espacios"
+        echo -e "           Ejemplo. ( datos1 datos2 videos fotos etc )"
+        echo -e "   2.${azul} Ver direcciones ip de tu red.${borra_colores}"
+        echo -e "       Con esta opcion podras ver todas las ips que tienes en tu red activas."
+        echo -e "   3.${azul} Ver las carpetas compartidas de tu servidor.${borra_colores}"
+        echo -e "       Simple, te muestra las carpetas que tienes disponibles en tu servidor SAMBA."
+        echo -e "   4.${azul} Resetear toda la configuracion.${borra_colores}"
+        echo -e "       Te permite dejar el script como recien instalado o descargado, borrara el fichero de configuracion, borrara el fichero de carga automatica si es que has configurado"
+        echo -e "       la opcion 7 del menu, asi como eliminara las lineas del (crontab) y de (sudoers). Vamos lo deja limpio y cuando lo ejecutes tendras que volver a configurar."
+        echo -e "   5.${azul} Montar las unidades.${borra_colores}"
+        echo -e "       Facil. si has parado el inicio automatico del script para sacar el menu y realizar alguna modificacion, con esta opcion montaras las unidames o carpetas configuradas."
+        echo -e "   6.${azul} Desmontar todas las unidades.${borra_colores}"
+        echo -e "       Basicamente igual que la opcion 5, pero al reves, lo que hace es desmontar todo lo que tengas montado."
+        echo -e "       De todas formas, al estar montadas con mount, si reinicias el equipo, NO se montaran, a no ser que lo tengas configurago con la opcion 7 del menu"
+        echo -e "   7.${azul} Montar las unidades al inicio del sistema. (crontab).${borra_colores}"
+        echo -e "       Con esta opcion, consigues que no tengas que ejecutar el script para montar las unidades o carpetas que tengas configuradas."
+        echo -e "       Se crea una orden el el fichero (crontab) que se encarga de montar las unidades o carpetas de tu servidor automaticamente en cada reinicio de tu sistema y tu usuario."
+        echo -e "       Hay que tener en cuenta que si lo tienes configurado con una lista de carpetas y un servisor y lo modificas manualmente, esos cambios no se modifican en el inicio del"
+        echo -e "       sistema, una vez que los cambios esten realizados, tendras que seleccionar la opcion 7 del menu para que lo actualize."
+        echo -e "  90.${azul} Ayuda.${borra_colores}"
+        echo -e "       JeJe, lo que estas biendo."
+        echo -e "  99.${azul} Atras / Salir.${borra_colores}"
+        echo -e "       Muy simple, no hace falta decir nada."
+        echo -e ""
+        echo -e "${azul} Pulsa una tecla para continuar.${borra_colores}"
+        read pasue
         ;;
         
     99) #salir
