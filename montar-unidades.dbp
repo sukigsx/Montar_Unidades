@@ -1,26 +1,28 @@
 [DEBREATE-0.7.13]
 <<CTRL>>
-Package: Backup-escritorio
+Package: Montar-Unidades
 Version: 1
 Maintainer: sukigsx <mbsistemas.sukigsx@gmail.com>
 Architecture: all
 Priority: optional
-Description: Realiza backup de la configuracion de tu escritorio.
- Este script esta pensado para realizar backup de la configuracion de tu escritorio.
- Esta probado en entorno Gnome y Plasma.
- Solo copia la configuracion, NO LOS DATOS.
+Description: Monta unidades de servidores samba.
+ Este script lo que hace, es automatizar el proceso de montar unidades en tu distro de linux, escanea tu red y busca servidores de archivos que utilizan el protocolo SAMBA.
  .
- - Backup de tus iconos.
- - Backup de tus ascesos directos en tu escritorio.
- - Backup de tus lanzadores, tanto del escritorio como del menu.
- - El backup lo puedes realizar en red a un servidor o en local.
- - Backup de la configuracion asi como las ventanas y las barras etc...
+ ¿Que puedes hacer con este script?
+ 0. Actualizar el script.
+ 1. Ver/editar fichero de configuracion.
+ 2. Ver direcciones ip de tu red.
+ 3. Ver las carpetas compartidas de tu servidor.
+ 4. Resetear toda la configuracion.
+ 5. Montar las unidades.
+ 6. Desmontar todas las unidades.
+ 7. Montar las unidades al inicio del sistema. (crontab).
 
 <</CTRL>>
 <<FILES>>
 1
-/home/sukigsx/Documentos/GitHub/Backup-esritorio/iconos/backup-escritorio.ico* -> backup-escritorio.ico -> /usr/share/icons/backup-escritorio
-/home/sukigsx/Documentos/GitHub/Backup-esritorio/codigo/backup-escritorio.sukigsx.sh* -> backup-escritorio.sukigsx.sh -> /usr/bin
+/home/sukigsx/Documentos/GitHub/Montar_Unidades/iconos/montar-unidades.png -> montar-unidades.png -> /usr/share/icons/montar-unidades
+/home/sukigsx/Documentos/GitHub/Montar_Unidades/codigo/montar_unidades.sukigsx.sh* -> montar_unidades.sukigsx.sh -> /usr/bin
 <</FILES>>
 <<SCRIPTS>>
 <<PREINST>>
@@ -125,11 +127,11 @@ echo ""
 <</COPYRIGHT>>
 <<MENU>>
 1
-Name=Backup-escritorio
+Name=Montar-unidades
 Version=1.0
-Exec=bash /usr/bin/backup-escritorio.sukigsx.sh
-Comment=--  Realiza backup de la configuracion de tu escritorio. --
-Icon=/usr/share/icons/backup-escritorio/backup-escritorio.ico
+Exec=bash /usr/bin/montar_unidades.sukigsx.sh
+Comment=--  Monta unidades de un servidor samba. --
+Icon=/usr/share/icons/montar-unidades/montar-unidades.png
 Type=Application
 Terminal=true
 StartupNotify=true
