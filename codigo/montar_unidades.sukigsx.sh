@@ -682,12 +682,12 @@ done
 
 done
 #comprueba aztualiczacion del script
-if [ -e /usr/bin/montar_unidades.sukigsx.sh ] #comprueba si se ha instalado el script con el deb, comprobando el fichero /usr/bin/inicio.sukigsx.sh
+if [ -f /usr/bin/montar_unidades.sukigsx.sh ] #comprueba si se ha instalado el script con el deb, comprobando el fichero /usr/bin/inicio.sukigsx.sh
 then
     ruta="/usr/bin"
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
     git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/montar_unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
@@ -699,7 +699,7 @@ else
     ruta=$(pwd)
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
     git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/montar_unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
