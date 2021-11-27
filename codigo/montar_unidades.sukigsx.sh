@@ -681,6 +681,33 @@ done
     echo -e " [${verde}ok${borra_colores}] $paquete."
 
 done
+#comprueba aztualiczacion del script
+if [ -e /usr/bin/montar_unidades.sukigsx.sh ] #comprueba si se ha instalado el script con el deb, comprobando el fichero /usr/bin/inicio.sukigsx.sh
+then
+    ruta="/usr/bin"
+    mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    git clone https://github.com/sukigsx/Googledrive-ocamlfuse.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/ocamlfuse.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
+    then
+        echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
+    else
+        echo -e " [${rojo}XX${borra_colores}] ${amarillo}script NO actualizado, puedes actualizarlo en la opcion ( 0 ).${borra_colores}";sleep 2
+    fi
+    sudo rm -r /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+else
+    ruta=$(pwd)
+    mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    git clone https://github.com/sukigsx/Googledrive-ocamlfuse.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/ocamlfuse.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
+    then
+        echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
+    else
+        echo -e " [${rojo}XX${borra_colores}] ${amarillo}script NO actualizado, puedes actualizarlo en la opcion ( 0 ).${borra_colores}";sleep 3
+    fi
+    sudo rm -r /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+fi
 echo -e ""
 echo -e "${verde} Continuamos...${borra_colores}"
 sleep 2
