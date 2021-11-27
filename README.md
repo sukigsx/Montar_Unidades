@@ -59,11 +59,11 @@ Muy simple, no hace falta decir nada.
 ### INSTALACION.
 
 #### Descargar e instalar el paquete DEB.
-- [Descargar el paque DEB](https://github.com/sukigsx/Backup-esritorio/raw/main/Backup-escritorio.deb). Y lo puedes instalar con tu forma habitual.
+- [Descargar el paque DEB](https://github.com/sukigsx/Montar_Unidades/raw/main/Montar-Unidades.deb). Y lo puedes instalar con tu forma habitual.
 
 - Instalar paquete DEB desde linea de comando en la terminal, lo descarga, lo instala y despues borra el paquete DEB.
 
-      wget https://github.com/sukigsx/Backup-esritorio/raw/main/Backup-escritorio.deb; sudo dpkg -i Backup-escritorio.deb; rm Backup-escritorio.deb
+      wget https://github.com/sukigsx/Montar_Unidades/raw/main/Montar-Unidades.deb; sudo dpkg -i Montar-Unidades.deb; rm Montar-Unidades.deb
   
  - Clonar el repositorio, desde la terminal. Dar permisos de ejecucion a todos los ficheros.
 
