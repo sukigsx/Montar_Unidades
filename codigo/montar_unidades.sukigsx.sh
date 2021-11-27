@@ -70,7 +70,7 @@ case $opcion in
             ruta="/usr/bin"
             cd /tmp
             mkdir temporal_update
-            git clone https://github.com/sukigsx/Instalacion-software.git /tmp/temporal_update
+            git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/temporal_update
             cd /tmp/temporal_update/codigo/
             sudo chmod +x $ruta/*.sukigsx.sh
             sudo cp -r /tmp/temporal_update/codigo/* $ruta
@@ -85,7 +85,7 @@ case $opcion in
             ruta=$(pwd)
             cd /tmp
             mkdir temporal_update
-            git clone https://github.com/sukigsx/Instalacion-software.git /tmp/temporal_update
+            git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/temporal_update
             cd /tmp/temporal_update/codigo/
             sudo chmod +x $ruta/*.sukigsx.sh
             sudo cp -r /tmp/temporal_update/codigo/* $ruta
@@ -686,8 +686,8 @@ if [ -e /usr/bin/montar_unidades.sukigsx.sh ] #comprueba si se ha instalado el s
 then
     ruta="/usr/bin"
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    git clone https://github.com/sukigsx/Googledrive-ocamlfuse.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/ocamlfuse.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/Montar_unidades.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
@@ -698,8 +698,8 @@ then
 else
     ruta=$(pwd)
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    git clone https://github.com/sukigsx/Googledrive-ocamlfuse.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/ocamlfuse.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
