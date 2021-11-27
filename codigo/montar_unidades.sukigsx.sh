@@ -687,7 +687,7 @@ then
     ruta="/usr/bin"
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
     git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
@@ -699,7 +699,7 @@ else
     ruta=$(pwd)
     mkdir /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
     git clone https://github.com/sukigsx/Montar_Unidades.git /tmp/com_update 2>/dev/null 1>/dev/null 0>/dev/null
-    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/ocamlfuse.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
+    diff /tmp/com_update/codigo/Montar_Unidades.sukigsx.sh $ruta/montar_unidades.sukigsx.sh 2>/dev/null 1>/dev/null 0>/dev/null
     if [ $? = "0" ] 2>/dev/null 1>/dev/null 0>/dev/null
     then
         echo -e " [${verde}ok${borra_colores}] script, esta actualizado."
