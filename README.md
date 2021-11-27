@@ -67,7 +67,7 @@ Muy simple, no hace falta decir nada.
   
  - Clonar el repositorio, desde la terminal. Dar permisos de ejecucion a todos los ficheros.
 
-       git clone https://github.com/sukigsx/Backup-esritorio.git
+       git clone https://github.com/sukigsx/Montar_Unidades.git
 
 **Nota**. Aconsejo instalar el paquete deb, porque así podrás tener en tu menú de aplicaciones el script con su icono y lo podrás lanzar de forma gráfica sin necesidad de abrir el terminal, además crea una función en el bashrc que al abrir el terminal y escribiendo (scripts), te lista todos mis scripts que tengas instalados en tu sistema que hayas instalado con el paquete deb. Cuando lo desístalas, te pregunta si lo quieres eliminar.
 
